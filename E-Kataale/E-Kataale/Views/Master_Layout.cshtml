@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/js")
+   
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+   
+</head>
+<body>
+    <div class="container-fluid jumbotron">
+
+    </div>
+
+    <div class="container">
+     
+           @RenderBody()
+
+       
+
+    </div>
+
+    <div class="modal-footer bg-dark">
+        Hello World
+    </div>
+</body>
+</html>
