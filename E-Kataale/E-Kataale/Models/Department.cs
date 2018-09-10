@@ -12,7 +12,7 @@ namespace E_Kataale.Models
         public int ID { get;}
 
         [Required]
-        [Display(Name="Department Name")]
+       // [Display(Name="Department Name")]
         public string Name { get; set; }
         public string Code { get; }
 

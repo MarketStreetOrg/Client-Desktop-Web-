@@ -17,14 +17,16 @@ namespace E_Kataale.App_Start
         public static void StyleBundle(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/css")
-                     .Include("~/Content/bootstrap.css"));
+                     .Include("~/Content/bootstrap.css", "~/Content/dataTables.bootstrap4.css", "~/Content/jquery.dataTables.css", "~/Content/mdb.css"));
         }
 
         public static void ScriptBundle(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/js")
-                     .Include("~/Scripts/jquery-{version}.js")
-                     .Include("~/Scripts/bootstrap.js"));
+                     .Include("~/Scripts/jquery-3.0.0.js",
+                     "~/Scripts/jquery.dataTables.js",
+                     "~/Scripts/bootstrap.js",
+                     "~/Scripts/custom.js"));
         }
     }
 }
