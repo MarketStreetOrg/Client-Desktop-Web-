@@ -12,7 +12,7 @@
     var index = -1;
     var time = 0.05;
 
-    $('.title strong').remove();
+    $('.title strong').remove();fuckerface
 
     for (i = 0; i < brandtitle.length; i++) {
 
