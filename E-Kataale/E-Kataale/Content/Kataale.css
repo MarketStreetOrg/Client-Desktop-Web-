@@ -1,0 +1,125 @@
+﻿
+
+body {
+    
+}
+
+.brand-menu
+{
+	height:inherit;
+	padding: 0px 2% 0px 2%;	
+}
+
+.brand ,.brand-menu
+{	
+		
+	float: left;	
+	height:auto;
+	width: inherit;
+}
+
+.brand-title{
+	
+	position: relative;
+	height: inherit;
+	
+}
+
+.menu-items{
+	
+
+	list-style-type: none;   
+    padding: 0; 
+	height:auto;
+	
+}
+
+.title ,.menu-items{
+	
+	font-family:Adobe Ming Std L;
+	color:#93B1DA;
+}
+
+.title{
+	
+	
+	position: relative;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 30px;
+	height:inherit;
+	top:25%;
+	
+
+}
+
+
+.title :first-child{
+	
+	background-color:#1B571C;
+	padding:0px 5px 0px 5px;
+	color: white;
+}
+
+.title:hover
+{
+	
+	color:#1B571C;
+}
+
+.menu-item 
+{		
+	
+	padding: 0px 5px 0px 5px;
+	font-size:1.2em;
+	height: inherit;
+	float: left;
+	
+}
+
+.menu-item a{
+	
+    height: inherit;
+	display: block;
+    color: default;
+    text-align: center;	
+    padding: 40px 16px;
+    text-decoration: none;
+}
+
+.menu-item a:hover 
+{
+	
+	background-color:#1B571C;
+	color: white;
+	
+}
+
+.navbar{
+
+    background-color:white !important;
+    height:auto !important;
+    padding-top:0px;
+    padding-bottom:0px;
+    
+}
+
+
+.logo .text{
+   
+    color:black;
+    /*font-size:30px;*/
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+
+.logo .text:hover
+{
+   
+    color:red;
+    -webkit-transition: color 2s ease-out;
+  -moz-transition: color 2s ease-out;
+  -o-transition: color 2s ease-out;
+  transition: color 2s ease-out;
+}

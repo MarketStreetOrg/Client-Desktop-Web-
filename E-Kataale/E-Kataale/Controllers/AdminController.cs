@@ -27,6 +27,21 @@ namespace E_Kataale.Controllers
             return View();
         }
 
+        public ActionResult Markets()
+        {
+            return View();
+        }
+
+        public ActionResult Suppliers()
+        {
+            return View();
+        }
+
+        public ActionResult Manufacturers()
+        {
+            return View();
+        }
+
         //SET
 
     }
