@@ -8,7 +8,7 @@
     var elem = $('.title strong');
     var body = $('body');
     var currentTargetIndex;
-    var brandtitle = elem.text();
+    var brandtitle = elem.text();lkjk
     var index = -1;
     var time = 0.05;
 
