@@ -8,11 +8,11 @@
     var elem = $('.title strong');
     var body = $('body');
     var currentTargetIndex;
-    var brandtitle = elem.text();lkjk
+    var brandtitle = elem.text();
     var index = -1;
     var time = 0.05;
 
-    $('.title strong').remove();fuckerface
+    $('.title strong').remove();
 
     for (i = 0; i < brandtitle.length; i++) {
 
