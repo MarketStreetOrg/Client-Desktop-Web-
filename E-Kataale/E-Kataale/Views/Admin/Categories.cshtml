@@ -1,4 +1,4 @@
-﻿@model E_Kataale.Models.Category
+﻿@model List<E_Kataale.Models.Category>
 
 @{
     ViewBag.Title = "Categories";
@@ -7,10 +7,116 @@
 
 <h2>Categories</h2>
 
-<div>
-    <h4>Category</h4>
-    <hr />
-   
+<div class="container row">
+    <div class="col-md-8">
+
+        <table class="table table-hover" id="example">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Department</th>
+                    <th>Products</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var category in Model)
+                    {
+                        <tr>
+
+                            <td>@category.Name</td>
+                            <td>@category.Description</td>
+                            <td>@category.Department.Name</td>
+                            <td>@category.Products</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Category", new { category.ID }, new { @class = "text-primary" })&nbsp;
+                                @{
+                                    if (category.Products > 0)
+                                    {
+
+                                    }
+                                    else
+                                    {
+
+                                        @Html.ActionLink("Delete", "DeleteCategory", new {category.ID }, new { @class = "text-danger" })
+
+
+                                    }
+                                }
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+    <div></div>
+
+    <div class="col-md-4">
+
+        <div class="form-horizontal">
+            <h4>Add Category</h4>
+            <hr />
+
+            @{
+                using (Html.BeginForm("NewDepartment", "Admin", FormMethod.Post))
+                {
+
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Department</label>
+                        <div class="col-md-10">
+
+                            @{
+                                var DepartmentList = (List<E_Kataale.Models.Department>)ViewData["Departments"];
+
+                                SelectList sl = new SelectList(DepartmentList,"ID","Name");
+
+                                @Html.DropDownList("Department",sl,new { @class="form-control"})
+                            }
+
+
+
+                        </div>
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Name</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" name="Name" />
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Description</label>
+                            <div class="col-md-10">
+                                <textarea type="text" class="form-control" name="Description" rows="5"></textarea>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+                        </div>
+
+                        }
+
+                        }
+
+
+                    </div>
+
+                </div>
 </div>
 <p>
    

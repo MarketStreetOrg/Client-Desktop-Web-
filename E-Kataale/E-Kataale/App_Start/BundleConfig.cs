@@ -32,7 +32,8 @@ namespace E_Kataale.App_Start
                      .Include("~/Scripts/jquery-3.0.0.js",
                      "~/Scripts/jquery.dataTables.js",
                      "~/Scripts/bootstrap.js",
-                     "~/Scripts/custom.js"));
+                     "~/Scripts/custom.js"
+                    ));
         }
     }
 }

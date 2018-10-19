@@ -1,4 +1,4 @@
-/*! DataTables 1.10.18
+﻿/*! DataTables 1.10.18
  * ©2008-2018 SpryMedia Ltd - datatables.net/license
  */
 
@@ -88,6 +88,7 @@
 	 *      $('#example').dataTable( {
 	 *        "paginate": false,
 	 *        "sort": false
+	 *         
 	 *      } );
 	 *    } );
 	 */

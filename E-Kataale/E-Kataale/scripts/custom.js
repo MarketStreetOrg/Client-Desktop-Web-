@@ -1,7 +1,21 @@
 ﻿$(document).ready(function () {
     "use strict";
 
-    $('#example').DataTable();
+    $(document).ready(function () {
+        $('#example').DataTable();
+       
+        $('#example tr').each(function () {
+
+            $(this).on('click', function (e) {
+
+             
+
+            });
+
+        });
+
+    });
+
     $('.dataTables_length').addClass('bs-select');
 
 
