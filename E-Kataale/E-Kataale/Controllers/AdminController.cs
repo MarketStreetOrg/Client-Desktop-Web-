@@ -16,6 +16,7 @@ namespace E_Kataale.Controllers
     {
         List<Department> departments;
         HttpGeneric generic = new HttpGeneric();
+        Department FocusDepartment;
 
         string Departm = null;
 
@@ -77,6 +78,8 @@ namespace E_Kataale.Controllers
                 Description = JsonObject["Description"].ToString()
             };
 
+            FocusDepartment = department;
+
             return View(department);
         }
         
@@ -99,7 +102,6 @@ namespace E_Kataale.Controllers
             return RedirectToAction("departments");
         }
 
-   
         [ActionName("categories-dept")]
         [HttpGet]
         public async Task<ActionResult> CategoriesInDepartment(int ID)
@@ -129,13 +131,18 @@ namespace E_Kataale.Controllers
 
                 category.Department = department;
 
-                var RunDepartments = await Departments();
-
-                ViewData["Departments"] = departments;
+               
 
                 categories.Add(category);
             }
 
+            var RunDepartments = await Departments();
+
+            ViewData["Departments"] = departments;
+
+            await Department(ID);
+
+            ViewData["FocusDepartment"] = FocusDepartment;
 
             return View("categories",categories);
         }
@@ -176,6 +183,21 @@ namespace E_Kataale.Controllers
             ViewData["Departments"] = departments;
 
             return View(categories);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> NewCategory(int Department,string Name,string Description)
+        {
+            JObject CategoryObject = new JObject();
+
+            CategoryObject["Departmentid"] = Department;
+            CategoryObject["Name"] = Name;
+            CategoryObject["Description"] = Description;
+
+            await generic.PostAsync("http://localhost/ms/api/Admin/AddCategory", CategoryObject);
+
+            return RedirectToAction("Categories");
+
         }
 
         public ActionResult Markets()

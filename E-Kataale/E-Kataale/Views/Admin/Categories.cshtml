@@ -5,7 +5,33 @@
     Layout = "~/Views/Master_Layout.cshtml";
 }
 
+
 <h2>Categories</h2>
+
+<h5>
+    Department:
+
+    @{
+        try
+        {
+            var Dep = (E_Kataale.Models.Department)ViewData["FocusDepartment"];
+
+            @Dep.Name
+
+        }
+        catch
+        {
+
+            <span>ALL</span>
+        }
+
+    }
+
+</h5>
+
+
+<br />
+
 
 <div class="container row">
     <div class="col-md-8">
@@ -41,7 +67,7 @@
                                     else
                                     {
 
-                                        @Html.ActionLink("Delete", "DeleteCategory", new {category.ID }, new { @class = "text-danger" })
+                                        @Html.ActionLink("Delete", "DeleteCategory", new { category.ID }, new { @class = "text-danger" })
 
 
                                     }
@@ -65,7 +91,7 @@
             <hr />
 
             @{
-                using (Html.BeginForm("NewDepartment", "Admin", FormMethod.Post))
+                using (Html.BeginForm("NewCategory", "Admin", FormMethod.Post))
                 {
 
 
@@ -76,49 +102,49 @@
                             @{
                                 var DepartmentList = (List<E_Kataale.Models.Department>)ViewData["Departments"];
 
-                                SelectList sl = new SelectList(DepartmentList,"ID","Name");
+                                SelectList sl = new SelectList(DepartmentList, "ID", "Name");
 
-                                @Html.DropDownList("Department",sl,new { @class="form-control"})
+
+                                @Html.DropDownList("Department", sl, "Select", new { @class = "form-control", @Name = "Department" })
                             }
 
 
-
                         </div>
-                        </div>
-                        
-
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Name</label>
-                            <div class="col-md-10">
-                                <input type="text" class="form-control" name="Name" />
-
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Description</label>
-                            <div class="col-md-10">
-                                <textarea type="text" class="form-control" name="Description" rows="5"></textarea>
-
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Create" class="btn btn-default" />
-                            </div>
-                        </div>
-
-                        }
-
-                        }
-
-
                     </div>
 
-                </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Name</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="Name" />
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Description</label>
+                        <div class="col-md-10">
+                            <textarea type="text" class="form-control" name="Description" rows="5"></textarea>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                }
+
+            }
+
+
+        </div>
+
+    </div>
 </div>
 <p>
-   
+
     @Html.ActionLink("Back to List", "Index")
 </p>
